@@ -10,7 +10,7 @@ function Welcome(props) {
         const fetchUser  = async(resp)=>{
         
         try{
-        const response = await fetch('http://fullstack-role.busara.io/api/v1/users/current-user',{
+        const response = await fetch('https://fullstack-role.busara.io/api/v1/users/current-user',{
          method:'POST',
          headers: {
             'Content-Type': 'application/json',

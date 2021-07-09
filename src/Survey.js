@@ -48,7 +48,7 @@ function Survey(props) {
   const submitSurvey  = async(resp)=>{
     const auth_token = localStorage.getItem('access_token'); 
     try{
-    const response = await fetch('http://fullstack-role.busara.io/api/v1/recruitment/answers/submit/',{
+    const response = await fetch('https://fullstack-role.busara.io/api/v1/recruitment/answers/submit/',{
      method:'POST',
      headers: {
          'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ function Survey(props) {
 
    const fetchSurvey  = async()=>{
        try{
-       const response = await fetch('http://fullstack-role.busara.io/api/v1/recruitment/forms/?node_type=Both',{
+       const response = await fetch('https://fullstack-role.busara.io/api/v1/recruitment/forms/?node_type=Both',{
         method:'GET',
         headers: {
             'Content-Type': 'application/json',
