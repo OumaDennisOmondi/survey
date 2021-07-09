@@ -46,19 +46,20 @@ function Survey(props) {
 
   //submit survey
   const submitSurvey  = async(resp)=>{
+    const auth_token = localStorage.getItem('access_token'); 
     try{
     const response = await fetch('http://fullstack-role.busara.io/api/v1/recruitment/answers/submit/',{
      method:'POST',
      headers: {
          'Content-Type': 'application/json',
-         'Authorization': 'Bearer iODanpQ21YkM1ZNFSPoRN01FSCwPva'
+         'Authorization': `Bearer ${auth_token}`
        },
      body:JSON.stringify(resp)
      
  })
  const data = await response.json();
  console.log(data)
-
+ props.history.push("/complete");
  return data;
 }catch(e){
  console.log(e)
